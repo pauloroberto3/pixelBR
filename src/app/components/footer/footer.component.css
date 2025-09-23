@@ -1,0 +1,70 @@
+/* Container principal do footer */
+footer {
+    width: 100%;
+    background-color: var(--color-preto);
+    color: var(--color-branco);
+    font-family: var(--font-primary);
+    padding-top: 3rem;
+    border-top: 2px solid var(--color-preto);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 2rem 3rem 2rem;
+}
+
+.footer-brand .logo span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-branco);
+    text-shadow:
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
+}
+
+.footer-brand .slogan {
+    margin-top: 1rem;
+    color: #a0a0a0;
+    max-width: 250px;
+}
+
+.footer-links h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--color-branco);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    color: #a0a0a0;
+}
+
+.footer-links a:hover {
+    color: var(--color-branco);
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}

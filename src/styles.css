@@ -56,5 +56,17 @@ table {
     --color-preto: #2A2A2A;
     --color-hover: rgb(0, 192, 96); 
   }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+	height: 100%;
+ }
+
+app-root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+	padding-top: 80px; 
+}
