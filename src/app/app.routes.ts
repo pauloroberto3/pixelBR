@@ -5,7 +5,7 @@ import { CatalogoComponent } from './pages/Catalogo/Catalogo.component';
 import { CarrinhoComponent } from './pages/Carrinho/Carrinho.component';
 import { DetalheJogoComponent } from './pages/DetalheJogo/DetalheJogo.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, 
   { path: 'home', component: HomeComponent },
   { path: 'catalogo', component: CatalogoComponent },

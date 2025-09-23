@@ -1,0 +1,105 @@
+nav {
+    width: 100%;
+    background-color: var(--color-preto); 
+    color: var(--color-branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: var(--font-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+nav .logo a {
+    font-size: 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--color-branco);
+    text-shadow:
+    2px 2px 0 var(--color-verde),
+    4px 4px 0 var(--color-amarelo),
+    6px 6px 0 var(--color-azul);
+    cursor: default;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav .nav-links li a {
+    color: var(--color-branco);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1.3em;
+}
+
+nav .nav-links li a:hover {
+    background-color: var(--color-branco);
+    color: var(--color-preto);
+    box-shadow:
+    2px 2px 0 var(--color-verde),
+    4px 4px 0 var(--color-amarelo),
+    6px 6px 0 var(--color-azul);
+}
+
+nav .actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-right: 4rem;
+}
+
+.cart-btn {
+    position: relative;
+    display: flex; 
+}
+
+.cart-btn button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-branco);
+}
+
+.cart-btn mat-icon {
+    background: none;
+    font-size: 32px; 
+    width: 32px;
+    height: 32px;
+}
+
+
+.cart-count {
+    font-family: var(--font-primary);
+    background-color: var(--color-branco);
+    color: var(--color-preto);
+    box-shadow:
+        0.5px 0.5px 0 var(--color-verde),
+        1px 1px 0 var(--color-amarelo),
+        1.5px 1.5px 0 var(--color-azul);
+    border: solid 1px var(--color-preto);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    position: absolute;
+    top: -5px; 
+    right: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 22px;
+    height: 22px;
+}

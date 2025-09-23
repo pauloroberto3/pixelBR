@@ -1,0 +1,16 @@
+<nav>
+  <div class="logo">
+    <a routerLink="/">PixelBR</a>
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/catalogo">Catálogo</a></li>
+  </ul>
+  <div class="actions">
+    <div class="cart-btn">
+      <button routerLink="/carrinho">
+        <mat-icon>shopping_cart</mat-icon>
+              <span class="cart-count">{{ itemCount }}</span>
+      </button>
+    </div>
+  </div>
+</nav>
