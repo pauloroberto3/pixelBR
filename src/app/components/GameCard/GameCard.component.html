@@ -1,0 +1,17 @@
+<div class="game-grid">
+  @for (jogo of jogos; track jogo.id) {
+    <div class="game-card">
+      <img [src]="jogo.capaFull" [alt]="jogo.titulo" />
+
+      <div class="card-content">
+        <h3>{{ jogo.titulo }}</h3>
+        <p class="sinopse">{{ jogo.sinopseCurta }}</p>
+
+        <div class="price-and-action">
+          <p class="preco">{{ jogo.preco | currency:'BRL' }}</p>
+          <button (click)="adicionarAoCarrinho(jogo)">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

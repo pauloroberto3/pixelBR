@@ -1,3 +1,32 @@
-<p>
-  Home works!
-</p>
+<div class="home-container">
+    <section class="hero-carousel">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div *ngFor="let slide of slidesDoCarrossel" class="swiper-slide" [style.background-image]="'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(' + slide.imagemFundo + ')'">
+            <div class="slide-content">
+              <h2>{{ slide.titulo }}</h2>
+              <p>{{ slide.texto }}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  
+    <section class="featured-games">
+      <h2 class="section-title">Jogos mais Famosos</h2>
+      <app-game-card [jogos]="jogosEmDestaque"></app-game-card>
+    </section>
+  
+    <section class="genres-section">
+      <h2 class="section-title">Navegue por Gêneros</h2>
+      <div class="genre-grid">
+        <a routerLink="/generos/acao" class="genre-card">Ação</a>
+        <a routerLink="/generos/aventura" class="genre-card">Aventura</a>
+        <a routerLink="/generos/rpg" class="genre-card">RPG</a>
+        <a routerLink="/generos/estrategia" class="genre-card">Estratégia</a>
+        <a routerLink="/generos/corrida" class="genre-card">Corrida</a>
+        <a routerLink="/generos/terror" class="genre-card">Terror</a>
+      </div>
+    </section>
+  </div>

@@ -30,6 +30,7 @@ body {
 	line-height: 1;
     background-color: var(--color-branco);
     color: var(--color-preto);
+	font-family: var(--font-primary);
 }
 ol, ul {
 	list-style: none;
