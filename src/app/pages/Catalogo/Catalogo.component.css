@@ -1,0 +1,70 @@
+.catalogo-container {
+    display: flex;
+    gap: 3rem;
+    padding: 0 3rem 3rem;
+    max-width: 1800px;
+    margin: 0 auto;
+    align-items: baseline; 
+}
+
+.sidebar {
+    flex-basis: 300px;
+    flex-shrink: 0;
+    position: sticky; 
+    top: 120px;
+}
+
+.filtro-grupo h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-preto);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filtro-grupo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filtro-btn {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.5rem;
+    background-color: transparent;
+    border: none;
+    color: var(--color-preto);
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filtro-btn:hover {
+    background-color: #ccc;
+    color: var(--color-branco);
+}
+
+.filtro-btn.active {
+    background-color: var(--color-preto);
+    color: var(--color-branco);
+    font-weight: 600;
+    box-shadow:
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
+}
+
+.game-display {
+    flex-grow: 1;
+}
+
+.game-display h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-preto);
+    margin-bottom: 2rem;
+}

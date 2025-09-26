@@ -1,3 +1,41 @@
-<p>
-  DetalheJogo works!
-</p>
+@if (jogo) {
+  <div class="detalhe-container">
+    <div class="content-wrapper">
+      <main class="main-content">
+        <h1>{{ jogo.titulo }}</h1>
+        <div class="banner-container">
+          <img [src]="jogo.capaFull" [alt]="'Banner do jogo ' + jogo.titulo" class="game-banner">
+        </div>
+        <div class="descricao-detalhada">
+          <h2>Sobre o Jogo</h2>
+          <p>{{ jogo.sinopseDetalhada }}</p>
+        </div>
+      </main>
+
+      <aside class="sidebar">
+        <img [src]="jogo.capaPoster" [alt]="'Pôster do jogo ' + jogo.titulo" class="sidebar-poster">
+        
+        <p class="sidebar-sinopse">{{ jogo.sinopseCurta }}</p>
+
+        <div class="info-tags">
+          <div class="info-item"><span>Gênero:</span> <a routerLink="/catalogo">{{ jogo.genero }}</a></div>
+          <div class="info-item"><span>Desenvolvedor:</span> <span>{{ jogo.estudio }}</span></div>
+          <div class="info-item"><span>Lançamento:</span> <span>{{ jogo.ano }}</span></div>
+        </div>
+
+        <div class="buy-box">
+          <h2>Compre {{ jogo.titulo }}</h2>
+          <div class="price-action">
+            <span class="preco">{{ jogo.preco | currency:'BRL' }}</span>
+            <button (click)="adicionarAoCarrinho(jogo)">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+} @else {
+  <div class="jogo-nao-encontrado">
+    <h1>Jogo não encontrado</h1>
+    <a routerLink="/catalogo">Voltar ao Catálogo</a>
+  </div>
+}

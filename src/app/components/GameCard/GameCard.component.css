@@ -1,7 +1,8 @@
-/* O container volta a ser um grid responsivo */
-.game-grid {
+/* ================================================= */
+/* --- ESTILOS PARA OS CARDS DA HOME PAGE --- */
+/* ================================================= */
+.game-grid-home {
     display: grid;
-    /* Colunas com no mínimo 320px de largura */
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
     padding: 2rem;
@@ -9,39 +10,35 @@
     margin: 0 auto;
 }
 
-/* Card com fundo preto para se mesclar à página */
-.game-card {
-    background-color: var(--color-preto); /* Fundo igual ao da página */
+.game-card-home {
+    background-color: var(--color-preto);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
-    flex-direction: column; /* Itens empilhados verticalmente */
+    flex-direction: column;
     transition: transform 0.3s ease;
-    border: 1px solid transparent; /* Borda inicial transparente */
+    border: 1px solid transparent;
 }
 
-.game-card:hover {
+.game-card-home:hover {
     transform: translateY(-8px);
-    /* Mantemos uma borda sutil no hover para destacar */
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Imagem deitada com altura fixa */
-.game-card img {
+.game-card-home img {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
 
-/* Container do conteúdo de texto */
 .card-content {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Ocupa o espaço restante */
+    flex-grow: 1;
 }
 
-.game-card h3 {
+.game-card-home h3 {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--color-branco);
@@ -53,7 +50,7 @@
     color: #a0a0a0;
     line-height: 1.5;
     margin-bottom: 1rem;
-    flex-grow: 1; /* Empurra o preço e o botão para baixo */
+    flex-grow: 1;
 }
 
 .price-and-action {
@@ -63,31 +60,89 @@
     gap: 1rem;
 }
 
-.preco {
+.preco-home {
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--color-branco); /* Cor do preço alterada para branco */
+    color: var(--color-branco);
 }
 
-/* Novo estilo "fantasma" para o botão */
-.game-card button {
+.game-card-home button {
     background-color: transparent;
     color: var(--color-branco);
-    border: 1px solid var(--color-branco); /* Borda branca */
+    border: 1px solid var(--color-branco);
     padding: 0.7rem 1.2rem;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.2s ease;
 }
 
-/* Efeito de hover que inverte as cores */
-.game-card button:hover {
+.game-card-home button:hover {
     background-color: var(--color-branco);
     color: var(--color-preto);
     box-shadow:
-    2px 2px 0 var(--color-verde),
-    4px 4px 0 var(--color-amarelo),
-    6px 6px 0 var(--color-azul);
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
+}
+
+/* ================================================= */
+/* --- ESTILOS PARA OS CARDS DO CATÁLOGO --- */
+/* ================================================= */
+.game-grid-poster {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 2rem;
+}
+
+.game-card-poster {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    aspect-ratio: 2 / 3; 
+}
+
+.game-card-poster:hover {
+    transform: scale(1.05);
+}
+
+.game-card-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.poster-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0));
+    color: var(--color-branco);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.game-card-poster:hover .poster-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.poster-overlay h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.preco-poster {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-branco);
 }

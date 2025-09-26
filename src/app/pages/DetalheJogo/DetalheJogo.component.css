@@ -1,0 +1,158 @@
+.detalhe-container {
+    padding: 50px 3rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    color: var(--color-preto);
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.main-content {
+    flex: 1; 
+    min-width: 0;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.main-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.banner-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    height: auto;
+}
+
+.game-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-fit: contain;
+}
+
+.descricao-detalhada h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.descricao-detalhada p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #a5a5a5;
+}
+
+.sidebar {
+    flex-basis: 350px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 120px;
+}
+
+.sidebar-poster {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.sidebar-sinopse {
+    font-size: 1.2rem;
+    color: #a5a5a5;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.info-tags {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.info-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.info-item span:first-child {
+    color: #a0a0a0;
+}
+
+.info-item a {
+    color: var(--color-preto);
+    text-decoration: underline;
+    font-weight: 500;
+}
+.info-item a:hover {
+    color: var(--color-azul);
+}
+
+.buy-box {
+    background-color: var(--color-preto);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.buy-box h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-branco);
+}
+
+.price-action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--color-branco);
+}
+
+.price-action .preco {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.price-action button {
+    background-color: var(--color-branco);
+    color: var(--color-preto);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    box-shadow:
+    4px 4px 0 var(--color-verde),
+    6px 6px 0 var(--color-amarelo),
+    8px 8px 0 var(--color-azul);
+}
+
+.price-action button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.jogo-nao-encontrado {
+    padding: 120px 3rem 3rem;
+    text-align: center;
+}

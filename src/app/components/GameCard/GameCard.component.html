@@ -1,17 +1,29 @@
-<div class="game-grid">
-  @for (jogo of jogos; track jogo.id) {
-    <div class="game-card">
-      <img [src]="jogo.capaFull" [alt]="jogo.titulo" />
-
-      <div class="card-content">
-        <h3>{{ jogo.titulo }}</h3>
-        <p class="sinopse">{{ jogo.sinopseCurta }}</p>
-
-        <div class="price-and-action">
-          <p class="preco">{{ jogo.preco | currency:'BRL' }}</p>
-          <button (click)="adicionarAoCarrinho(jogo)">Adicionar ao Carrinho</button>
+@if (cardStyle === 'poster') {
+  <div class="game-grid-poster">
+    @for (jogo of jogos; track jogo.id) {
+      <a [routerLink]="['/jogo', jogo.id]" class="game-card-poster">
+        <img [src]="jogo.capaPoster" [alt]="jogo.titulo" />
+        <div class="poster-overlay">
+          <h3>{{ jogo.titulo }}</h3>
+          <p class="preco-poster">{{ jogo.preco | currency:'BRL' }}</p>
+        </div>
+      </a>
+    }
+  </div>
+} @else {
+  <div class="game-grid-home">
+    @for (jogo of jogos; track jogo.id) {
+      <div class="game-card-home">
+        <img [src]="jogo.capaFull" [alt]="jogo.titulo" />
+        <div class="card-content">
+          <h3>{{ jogo.titulo }}</h3>
+          <p class="sinopse">{{ jogo.sinopseCurta }}</p>
+          <div class="price-and-action">
+            <p class="preco-home">{{ jogo.preco | currency:'BRL' }}</p>
+            <button (click)="adicionarAoCarrinho(jogo)">Adicionar ao Carrinho</button>
+          </div>
         </div>
       </div>
-    </div>
-  }
-</div>
+    }
+  </div>
+}

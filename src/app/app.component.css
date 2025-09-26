@@ -1,0 +1,36 @@
+:host > main {
+  position: relative; 
+  flex: 1;
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 6rem;          
+    left: 2rem;         
+    z-index: 10;        
+
+    background-color: var(--color-preto);
+    color: var(--color-branco);
+    border: 2px solid var(--color-branco);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.botao-voltar:hover {
+    background-color: var(--color-preto);
+    color: var(--color-branco);
+    transform: scale(1.05);
+    box-shadow:
+    2px 2px 0 var(--color-verde),
+    4px 4px 0 var(--color-amarelo),
+    6px 6px 0 var(--color-azul);
+}

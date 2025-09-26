@@ -1,8 +1,11 @@
 <app-header></app-header>
 
 <main>
+  <button *ngIf="mostrarBotaoVoltar" (click)="voltarPaginaAnterior()" class="botao-voltar" title="Voltar">
+    &larr;
+  </button>
+  
   <router-outlet></router-outlet>
-  <app-game-card></app-game-card>
 </main>
 
 <app-footer></app-footer>

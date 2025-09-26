@@ -1,3 +1,33 @@
-<p>
-  Catalogo works!
-</p>
+<div class="catalogo-container">
+  <aside class="sidebar">
+    <div class="filtro-grupo">
+      <h3>Gêneros</h3>
+      <ul>
+        <li>
+          <button 
+            class="filtro-btn" 
+            [class.active]="!generoSelecionado" 
+            (click)="limparFiltros()">
+            Todos
+          </button>
+        </li>
+        <li *ngFor="let genero of generos">
+          <button 
+            class="filtro-btn" 
+            [class.active]="genero === generoSelecionado"
+            (click)="selecionarGenero(genero)">
+            {{ genero }}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="game-display">
+    <h1>Catálogo Completo</h1>
+    <app-game-card 
+      [jogos]="jogosFiltrados" 
+      [cardStyle]="'poster'">
+    </app-game-card>
+  </main>
+</div>
