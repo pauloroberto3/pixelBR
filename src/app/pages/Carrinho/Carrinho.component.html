@@ -1,3 +1,43 @@
-<p>
-  Carrinho works!
-</p>
+<div class="carrinho-container">
+  <h1>Meu Carrinho</h1>
+
+  @if (itensDoCarrinho.length > 0) {
+    <div class="carrinho-wrapper">
+      <div class="lista-itens">
+        @for (item of itensDoCarrinho; track item.id) {
+          <div class="item-card">
+            <!-- O link agora envolve a imagem e as informações -->
+            <a [routerLink]="['/jogo', item.id]" class="item-link">
+              <img [src]="item.capaPoster" [alt]="item.titulo" class="item-imagem">
+              <div class="item-info">
+                <h2>{{ item.titulo }}</h2>
+                <p>{{ item.preco | currency:'BRL' }}</p>
+              </div>
+            </a>
+            <!-- O botão de remover fica separado -->
+            <button (click)="removerItemDoCarrinho(item.id)" class="remover-btn">Remover</button>
+          </div>
+        }
+      </div>
+
+      <aside class="resumo-pedido">
+        <h2>Resumo</h2>
+        <div class="detalhe-preco">
+          <span>Subtotal ({{ itensDoCarrinho.length }} itens)</span>
+          <span>{{ precoTotal | currency:'BRL' }}</span>
+        </div>
+        <div class="total">
+          <span>Total</span>
+          <span>{{ precoTotal | currency:'BRL' }}</span>
+        </div>
+        <button class="finalizar-btn">Finalizar Compra</button>
+      </aside>
+    </div>
+  } @else {
+    <div class="carrinho-vazio">
+      <h2>O seu carrinho está vazio.</h2>
+      <p>Adicione jogos do nosso catálogo para vê-los aqui.</p>
+      <a routerLink="/catalogo" class="btn-catalogo">Ir para o Catálogo</a>
+    </div>
+  }
+</div>
