@@ -1,0 +1,19 @@
+.auth-nav {
+    display: flex;
+    justify-content: center; /* Centraliza a logo */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-preto);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-branco);
+  text-shadow:
+    2px 2px 0 var(--color-verde),
+    4px 4px 0 var(--color-amarelo),
+    6px 6px 0 var(--color-azul);
+    cursor: pointer;
+}

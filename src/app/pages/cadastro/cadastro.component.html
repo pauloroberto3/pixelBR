@@ -1,0 +1,34 @@
+<div class="auth-container">
+  @if (cadastroSucesso) {
+    <div class="auth-card success-message">
+      <h2>Cadastro Realizado!</h2>
+      <p>A sua conta foi criada com sucesso. Você será redirecionado para a página de login em alguns segundos.</p>
+    </div>
+  } @else {
+    <div class="auth-card">
+      <h1>Crie sua Conta</h1>
+      <p class="subtitle">É rápido e fácil. Comece a explorar os melhores jogos indies.</p>
+      
+      <form>
+        <div class="form-group">
+          <label for="nome">Nome de Usuário</label>
+          <input type="text" id="nome" placeholder="Seu nome de usuário" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Crie uma senha forte" required>
+        </div>
+        
+        <button type="button" (click)="fazerCadastro()" class="auth-btn">Criar Conta</button>
+      </form>
+      
+      <div class="auth-footer">
+        <p>Já tem uma conta? <a routerLink="/login">Faça login</a></p>
+      </div>
+    </div>
+  }
+</div>

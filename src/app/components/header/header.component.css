@@ -1,38 +1,41 @@
+/* Este é o seu CSS, ajustado para corresponder à sua estrutura HTML preferida. */
 nav {
-    width: 100%;
-    background-color: var(--color-preto); 
-    color: var(--color-branco);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem; 
     position: fixed;
     top: 0;
     left: 0;
-    font-family: var(--font-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-preto);
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: var(--font-primary);
 }
 
+/* Estilo para a logo dentro da div .logo */
 nav .logo a {
     font-size: 2.5rem;
     text-decoration: none;
     font-weight: 700;
     color: var(--color-branco);
     text-shadow:
-    2px 2px 0 var(--color-verde),
-    4px 4px 0 var(--color-amarelo),
-    6px 6px 0 var(--color-azul);
-    cursor: default;
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
 }
 
+/* Estilo para a lista ul.nav-links */
 nav .nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    margin: 0; /* Garante que não há margens padrão */
+    padding: 0; /* Garante que não há preenchimento padrão */
 }
 
+/* Estilo para os links 'a' dentro dos 'li' */
 nav .nav-links li a {
     color: var(--color-branco);
     text-decoration: none;
@@ -47,16 +50,16 @@ nav .nav-links li a:hover {
     background-color: var(--color-branco);
     color: var(--color-preto);
     box-shadow:
-    2px 2px 0 var(--color-verde),
-    4px 4px 0 var(--color-amarelo),
-    6px 6px 0 var(--color-azul);
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
 }
 
+/* Estilo para a div .actions que contém os botões */
 nav .actions {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    margin-right: 4rem;
+    gap: 1.5rem; /* Aumenta o espaçamento para o novo botão */
 }
 
 .cart-btn {
@@ -76,12 +79,10 @@ nav .actions {
 }
 
 .cart-btn mat-icon {
-    background: none;
     font-size: 32px; 
     width: 32px;
     height: 32px;
 }
-
 
 .cart-count {
     font-family: var(--font-primary);
@@ -103,4 +104,29 @@ nav .actions {
     align-items: center;
     min-width: 22px;
     height: 22px;
+}
+
+/* Estilo para o botão de Sair */
+.logout-btn {
+    background-color: transparent;
+    color: var(--color-branco);
+    border: none;
+    margin-right: 4rem;
+    margin-left: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: var(--color-branco);
+    color: var(--color-preto);
+        box-shadow:
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
 }

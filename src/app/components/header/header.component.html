@@ -1,6 +1,6 @@
 <nav>
   <div class="logo">
-    <a routerLink="/">PixelBR</a>
+    <a routerLink="/home">PixelBR</a>
   </div>
   <ul class="nav-links">
     <li><a routerLink="/catalogo">Catálogo</a></li>
@@ -9,8 +9,9 @@
     <div class="cart-btn">
       <button routerLink="/carrinho">
         <mat-icon>shopping_cart</mat-icon>
-              <span class="cart-count">{{ itemCount }}</span>
+        <span class="cart-count">{{ itemCount }}</span>
       </button>
     </div>
+    <button class="logout-btn" (click)="logout()">Sair</button>
   </div>
 </nav>

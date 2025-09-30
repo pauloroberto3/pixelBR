@@ -1,4 +1,8 @@
-<app-header></app-header>
+@if (isAuthPage) {
+  <app-auth-header></app-auth-header>
+} @else {
+  <app-header></app-header>
+}
 
 <main>
   <button *ngIf="mostrarBotaoVoltar" (click)="voltarPaginaAnterior()" class="botao-voltar" title="Voltar">

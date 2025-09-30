@@ -1,22 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { CarrinhoService } from '../../services/carrinho.service';
+import { AuthService } from '../../services/auth.service'; // 1. Importe o AuthService
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule, RouterModule, MatIconModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  imports: [MatIconModule, RouterModule],
-  standalone: true
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
   itemCount = 0;
+  private cartSubscription!: Subscription;
 
-  constructor(private carrinhoService: CarrinhoService) { }
+  // 2. Injete o AuthService no construtor
+  constructor(
+    private carrinhoService: CarrinhoService,
+    private authService: AuthService
+  ) { }
+
   ngOnInit(): void {
-    this.carrinhoService.cartItemCount$.subscribe(count => {
+    this.cartSubscription = this.carrinhoService.cartItemCount$.subscribe(count => {
       this.itemCount = count;
     });
+  }
+
+  // 3. Adicione a função de logout
+  logout(): void {
+    this.authService.logout();
+  }
+
+  ngOnDestroy(): void {
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
   }
 }
