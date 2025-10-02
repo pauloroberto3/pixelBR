@@ -1,26 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'; // 1. Importe o FormsModule
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule], // 2. Adicione-o aos imports
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
-  // A propriedade que estava a faltar.
-  // Começa como 'false' para mostrar o formulário.
   cadastroSucesso = false;
+  // 3. Nova propriedade para controlar a checkbox. Começa como 'false'.
+  termosAceites = false;
 
   constructor(private router: Router) {}
 
   fazerCadastro() {
-    // 1. Altera a propriedade para 'true' para mostrar a mensagem de sucesso
+    // A função só executa se os termos forem aceites (botão está ativo)
     this.cadastroSucesso = true;
-
-    // 2. Espera 3 segundos e depois redireciona para o login
     setTimeout(() => {
       this.router.navigate(['/login']);
     }, 3000);

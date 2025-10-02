@@ -85,3 +85,41 @@ form {
     color: #0d407a;
     font-weight: 600;
 }
+
+.form-group-terms {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+}
+.form-group-terms input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.form-group-terms label {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  line-height: 1.4;
+}
+.form-group-terms a {
+    color: var(--color-azul);
+    font-weight: 600;
+}
+
+.form-group-terms a:hover {
+    color: #0d407a;
+    font-weight: 600;
+}
+
+/* --- ESTILO DO BOTÃO DESATIVADO --- */
+.auth-btn:disabled {
+  background-color: #555;
+  color: #888;
+  cursor: not-allowed;
+    box-shadow:
+    2px 2px 0 #888,
+    4px 4px 0 #888,
+    6px 6px 0 #888;
+}

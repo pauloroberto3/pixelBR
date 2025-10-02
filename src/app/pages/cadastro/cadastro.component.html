@@ -23,7 +23,22 @@
           <input type="password" id="senha" placeholder="Crie uma senha forte" required>
         </div>
         
-        <button type="button" (click)="fazerCadastro()" class="auth-btn">Criar Conta</button>
+        <div class="form-group-terms">
+          <input type="checkbox" id="terms" name="terms" [(ngModel)]="termosAceites">
+          <label for="terms">
+            Eu li e concordo com os 
+            <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank">
+              Termos de Serviço e a Política de Privacidade
+            </a>.
+          </label>
+        </div>
+        <button 
+          type="button" 
+          (click)="fazerCadastro()" 
+          class="auth-btn"
+          [disabled]="!termosAceites">
+          Criar Conta
+        </button>
       </form>
       
       <div class="auth-footer">
