@@ -1,6 +1,6 @@
-.auth-nav {
+nav {
     display: flex;
-    justify-content: center; /* Centraliza a logo */
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background-color: var(--color-preto);
@@ -15,5 +15,29 @@
     2px 2px 0 var(--color-verde),
     4px 4px 0 var(--color-amarelo),
     6px 6px 0 var(--color-azul);
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.nav-links{
+  display: flex;
+  gap: 1rem;
+}
+
+nav .nav-links li a {
+    color: var(--color-branco);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1.3em;
+}
+
+nav .nav-links li a:hover {
+    background-color: var(--color-branco);
+    color: var(--color-preto);
+    box-shadow:
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
 }
