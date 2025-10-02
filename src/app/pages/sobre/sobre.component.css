@@ -1,0 +1,59 @@
+.sobre-container {
+    padding: 6rem 2rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.sobre-card {
+    background-color: var(--color-preto);
+    padding: 3rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    color: var(--color-branco);
+    text-align: center;
+}
+
+.logo-destaque {
+    margin-bottom: 2rem;
+}
+
+.logo-destaque span {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-branco);
+    text-shadow:
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
+}
+
+.sobre-card h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    color: #a0a0a0;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.conteudo {
+    text-align: left;
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.conteudo p {
+    margin-bottom: 1.5rem;
+}
+
+.conteudo strong {
+    color: var(--color-branco);
+    font-weight: 600;
+}
