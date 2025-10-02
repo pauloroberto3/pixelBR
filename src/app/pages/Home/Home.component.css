@@ -82,7 +82,7 @@
 }
 
 .genre-card {
-    background-color: #1a1a1a;
+    background-color: var(--color-preto);
     color: var(--color-branco);
     text-decoration: none;
     padding: 3rem 1rem;
@@ -111,7 +111,7 @@
 .genre-card:nth-child(3):before { background-color: #004d40; }
 .genre-card:nth-child(4):before { background-color: #4a148c; }
 .genre-card:nth-child(5):before { background-color: #e65100; }
-.genre-card:nth-child(6):before { background-color: #263238; }
+.genre-card:nth-child(6):before { background-color: #727272ce; }
 
 .genre-card:hover {
     transform: translateY(-5px);
