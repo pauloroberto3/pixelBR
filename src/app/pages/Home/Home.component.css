@@ -1,12 +1,15 @@
+/* --- SEU CSS ORIGINAL RESTAURADO --- */
 .home-container {
-    margin-top: -80px;
+    margin-top: -80px; 
 }
 
 .hero-carousel, .swiper-container {
     width: 100%;
     height: 90vh;
+    
+    /* A SOLUÇÃO ESTÁ AQUI */
+    overflow: hidden;
 }
-
 .swiper-slide {
     background-size: cover;
     background-position: center;
@@ -32,22 +35,6 @@
 .slide-content p {
     font-size: 1.25rem;
     margin-bottom: 2rem;
-}
-
-.hero-button {
-    background-color: var(--color-verde);
-    color: var(--color-preto);
-    padding: 1rem 2.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.hero-button:hover {
-    transform: scale(1.05);
-    background-color: #6effbe;
 }
 
 :host ::ng-deep .swiper-pagination {
@@ -103,9 +90,7 @@
     width: 100%;
     height: 4px;
     background-color: #333;
-    transition: background-color 0.3s ease;
 }
-
 .genre-card:nth-child(1):before { background-color: #b71c1c; }
 .genre-card:nth-child(2):before { background-color: #0d47a1; }
 .genre-card:nth-child(3):before { background-color: #004d40; }
@@ -119,4 +104,41 @@
         0 2px 0 var(--color-verde),
         0 4px 0 var(--color-amarelo),
         0 6px 0 var(--color-azul);
+}
+
+
+/* --- SECÇÃO DE RESPONSIVIDADE (AJUSTADA) --- */
+@media (max-width: 768px) {
+    .hero-carousel, .swiper-container {
+        height: 70vh;
+    }
+
+    .slide-content h2 {
+        font-size: 2.5rem;
+    }
+
+    /* O texto do parágrafo agora é ajustado, não escondido */
+    .slide-content p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+
+    .genre-grid {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem; /* Diminui ainda mais o parágrafo */
+    }
 }

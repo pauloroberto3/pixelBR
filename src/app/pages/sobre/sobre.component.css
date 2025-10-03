@@ -1,5 +1,5 @@
 .sobre-container {
-    padding: 6rem 2rem 3rem;
+    padding: 120px 2rem 3rem; /* Padding superior para compensar o header */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -56,4 +56,37 @@
 .conteudo strong {
     color: var(--color-branco);
     font-weight: 600;
+}
+
+/* ================================================= */
+/* --- SECÇÃO DE RESPONSIVIDADE (MOBILE) --- */
+/* ================================================= */
+@media (max-width: 768px) {
+    .sobre-container {
+        /* Reduz o padding para telas menores, ajustando para o header mobile */
+        padding: 80px 1.5rem 3rem;
+    }
+
+    .sobre-card {
+        /* Reduz o padding interno do card */
+        padding: 2.5rem 1.5rem;
+    }
+
+    .logo-destaque span {
+        /* Diminui o logo */
+        font-size: 2.5rem;
+    }
+
+    /* ADICIONE ESTAS REGRAS AQUI: */
+
+    /* Esconde o título e o subtítulo para um visual mais limpo */
+    .sobre-card h1,
+    .subtitulo {
+        display: none;
+    }
+
+    .logo-destaque {
+        /* Aumenta um pouco a margem do logo para compensar os elementos removidos */
+        margin-bottom: 2.5rem;
+    }
 }

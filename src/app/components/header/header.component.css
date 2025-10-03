@@ -1,4 +1,4 @@
-/* Este é o seu CSS, ajustado para corresponder à sua estrutura HTML preferida. */
+/* --- ESTILOS BASE (DESKTOP) --- */
 nav {
     position: fixed;
     top: 0;
@@ -9,13 +9,12 @@ nav {
     align-items: center;
     padding: 1rem 2rem;
     background-color: var(--color-preto);
-    z-index: 1000;
+    z-index: 1001;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: var(--font-primary);
+    overflow-x: hidden;
 }
 
-/* Estilo para a logo dentro da div .logo */
-nav .logo a {
+.logo a {
     font-size: 2.5rem;
     text-decoration: none;
     font-weight: 700;
@@ -26,17 +25,15 @@ nav .logo a {
         6px 6px 0 var(--color-azul);
 }
 
-/* Estilo para a lista ul.nav-links */
-nav .nav-links {
+.nav-links-desktop {
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    margin: 0; /* Garante que não há margens padrão */
-    padding: 0; /* Garante que não há preenchimento padrão */
+    margin: 0;
+    padding: 0;
 }
 
-/* Estilo para os links 'a' dentro dos 'li' */
-nav .nav-links li a {
+.nav-links-desktop li a {
     color: var(--color-branco);
     text-decoration: none;
     font-weight: 500;
@@ -46,7 +43,8 @@ nav .nav-links li a {
     font-size: 1.3em;
 }
 
-nav .nav-links li a:hover {
+.nav-links-desktop li a:hover,
+.nav-links-desktop li a.active-link {
     background-color: var(--color-branco);
     color: var(--color-preto);
     box-shadow:
@@ -55,20 +53,19 @@ nav .nav-links li a:hover {
         6px 6px 0 var(--color-azul);
 }
 
-/* Estilo para a div .actions que contém os botões */
-nav .actions {
+.header-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem; /* Aumenta o espaçamento para o novo botão */
+    gap: 1.5rem;
 }
 
 .cart-btn {
     position: relative;
-    display: flex; 
+    display: flex;
 }
 
 .cart-btn button {
-    background-color: transparent;
+    background: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -79,7 +76,7 @@ nav .actions {
 }
 
 .cart-btn mat-icon {
-    font-size: 32px; 
+    font-size: 32px;
     width: 32px;
     height: 32px;
 }
@@ -88,16 +85,13 @@ nav .actions {
     font-family: var(--font-primary);
     background-color: var(--color-branco);
     color: var(--color-preto);
-    box-shadow:
-        0.5px 0.5px 0 var(--color-verde),
-        1px 1px 0 var(--color-amarelo),
-        1.5px 1.5px 0 var(--color-azul);
+    box-shadow: 0.5px 0.5px 0 var(--color-verde), 1px 1px 0 var(--color-amarelo), 1.5px 1.5px 0 var(--color-azul);
     border: solid 1px var(--color-preto);
     border-radius: 50%;
     font-size: 0.75rem;
     font-weight: 700;
     position: absolute;
-    top: -5px; 
+    top: -5px;
     right: -10px;
     display: flex;
     justify-content: center;
@@ -106,13 +100,10 @@ nav .actions {
     height: 22px;
 }
 
-/* Estilo para o botão de Sair */
-.logout-btn {
+.logout-btn-desktop {
     background-color: transparent;
     color: var(--color-branco);
     border: none;
-    margin-right: 4rem;
-    margin-left: 1rem;
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
     font-weight: 600;
@@ -120,13 +111,101 @@ nav .actions {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-right: 2rem;
 }
 
-.logout-btn:hover {
+.logout-btn-desktop:hover {
     background-color: var(--color-branco);
     color: var(--color-preto);
-        box-shadow:
-        2px 2px 0 var(--color-verde),
-        4px 4px 0 var(--color-amarelo),
-        6px 6px 0 var(--color-azul);
+    box-shadow: 2px 2px 0 var(--color-verde), 4px 4px 0 var(--color-amarelo), 6px 6px 0 var(--color-azul);
+}
+
+/* --- ESTILOS DO MENU HAMBÚRGUER --- */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-branco);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1002;
+    margin-right: 2rem;
+}
+
+.nav-links-mobile {
+    position: fixed;
+    top: 77px; /* Altura do header em desktop */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-preto);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out; /* Adiciona transição para 'top' */
+    padding: 1rem 0;
+}
+
+.nav-links-mobile.is-open {
+    transform: translateY(0);
+}
+
+.nav-links-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-links-mobile li {
+    padding: 0.5rem 0;
+}
+
+.nav-links-mobile li a {
+    color: var(--color-branco);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: block;
+
+}
+
+.logout-btn-mobile {
+    background: none;
+    border: none;
+    color: #ff5252;
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* --- MEDIA QUERY (REGRAS DE RESPONSIVIDADE) --- */
+@media (max-width: 992px) {
+    .nav-links-desktop,
+    .logout-btn-desktop {
+        display: none;
+    }
+    .hamburger-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+    .logo a {
+        font-size: 2rem;
+    }
+    .header-right {
+        gap: 1rem;
+    }
+
+    /* A CORREÇÃO ESTÁ AQUI: */
+    /* Ajusta a posição do menu para a nova altura do header móvel */
+    .nav-links-mobile {
+        top: 61px;
+    }
 }

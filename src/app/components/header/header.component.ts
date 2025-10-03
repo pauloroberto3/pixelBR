@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { CarrinhoService } from '../../services/carrinho.service';
-import { AuthService } from '../../services/auth.service'; // 1. Importe o AuthService
+import { AuthService } from '../../services/auth.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,8 +16,10 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   itemCount = 0;
   private cartSubscription!: Subscription;
+  
+  // 1. Nova variável para controlar o estado do menu
+  isMenuAberto = false;
 
-  // 2. Injete o AuthService no construtor
   constructor(
     private carrinhoService: CarrinhoService,
     private authService: AuthService
@@ -29,7 +31,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
-  // 3. Adicione a função de logout
+  // 2. Nova função para alternar o estado do menu
+  toggleMenu(): void {
+    this.isMenuAberto = !this.isMenuAberto;
+  }
+
   logout(): void {
     this.authService.logout();
   }

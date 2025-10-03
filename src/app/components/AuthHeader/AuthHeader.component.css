@@ -8,22 +8,25 @@ nav {
 }
 
 .logo {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-branco);
-  text-shadow:
-    2px 2px 0 var(--color-verde),
-    4px 4px 0 var(--color-amarelo),
-    6px 6px 0 var(--color-azul);
-  cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-branco);
+    text-shadow:
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
+    cursor: pointer;
 }
 
-.nav-links{
-  display: flex;
-  gap: 1rem;
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none; /* Garante que não há marcadores de lista */
+    padding: 0;
+    margin: 0;
 }
 
-nav .nav-links li a {
+.nav-links li a {
     color: var(--color-branco);
     text-decoration: none;
     font-weight: 500;
@@ -33,11 +36,33 @@ nav .nav-links li a {
     font-size: 1.3em;
 }
 
-nav .nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links li a.active-link { /* Estilo para o link ativo */
     background-color: var(--color-branco);
     color: var(--color-preto);
     box-shadow:
         2px 2px 0 var(--color-verde),
         4px 4px 0 var(--color-amarelo),
         6px 6px 0 var(--color-azul);
+}
+
+/* --- INÍCIO DA SECÇÃO DE RESPONSIVIDADE --- */
+
+/* Para telas de telemóvel (até 576px de largura) */
+@media (max-width: 576px) {
+    nav {
+        /* Muda a direção para empilhar os itens verticalmente */
+        flex-direction: column;
+        /* Adiciona um espaço entre a logo e os links */
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .logo {
+        font-size: 2.2rem; /* Diminui um pouco a logo */
+    }
+
+    .nav-links {
+        gap: 0.5rem; /* Diminui o espaço entre os botões Login/Cadastro */
+    }
 }

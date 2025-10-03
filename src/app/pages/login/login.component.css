@@ -57,9 +57,9 @@ form {
     background-color: var(--color-preto);
     color: var(--color-branco);
     box-shadow:
-    2px 2px 0 var(--color-verde),
-    4px 4px 0 var(--color-amarelo),
-    6px 6px 0 var(--color-azul);
+        2px 2px 0 var(--color-verde),
+        4px 4px 0 var(--color-amarelo),
+        6px 6px 0 var(--color-azul);
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -67,7 +67,7 @@ form {
     cursor: pointer;
 }
 
-.auth-btn:hover{
+.auth-btn:hover {
     background-color: #444;
 }
 
@@ -84,4 +84,22 @@ form {
 .auth-footer a:hover {
     color: #0d407a;
     font-weight: 600;
+}
+
+/* --- SECÇÃO DE RESPONSIVIDADE (ADICIONADA) --- */
+@media (max-width: 480px) {
+    .auth-container {
+        /* Garante que não há padding horizontal excessivo */
+        padding: 0.5rem 1rem 3rem;
+    }
+
+    .auth-card {
+        /* Diminui o padding em telas muito pequenas */
+        padding: 2rem 1.5rem;
+    }
+
+    .auth-card h1 {
+        /* Diminui o título principal */
+        font-size: 1.8rem;
+    }
 }

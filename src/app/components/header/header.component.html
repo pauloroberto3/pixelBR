@@ -2,18 +2,34 @@
   <div class="logo">
     <a routerLink="/home">PixelBR</a>
   </div>
-  <ul class="nav-links">
-    <li><a routerLink="/home">Início</a></li>
-    <li><a routerLink="/catalogo">Catálogo</a></li>
-    <li><a routerLink="/sobre">Sobre nós</a></li>
+
+  <ul class="nav-links-desktop">
+    <li><a routerLink="/home" routerLinkActive="active-link">Início</a></li>
+    <li><a routerLink="/catalogo" routerLinkActive="active-link">Catálogo</a></li>
+    <li><a routerLink="/sobre" routerLinkActive="active-link">Sobre nós</a></li>
   </ul>
-  <div class="actions">
+
+  <div class="header-right">
     <div class="cart-btn">
       <button routerLink="/carrinho">
         <mat-icon>shopping_cart</mat-icon>
         <span class="cart-count">{{ itemCount }}</span>
       </button>
     </div>
-    <button class="logout-btn" (click)="logout()">Sair</button>
+
+    <button class="logout-btn-desktop" (click)="logout()">Sair</button>
+    
+    <button class="hamburger-btn" (click)="toggleMenu()">
+      <i [class]="isMenuAberto ? 'fas fa-times' : 'fas fa-bars'"></i>
+    </button>
   </div>
 </nav>
+
+<div class="nav-links-mobile" [class.is-open]="isMenuAberto">
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active-link" (click)="toggleMenu()">Início</a></li>
+    <li><a routerLink="/catalogo" routerLinkActive="active-link" (click)="toggleMenu()">Catálogo</a></li>
+    <li><a routerLink="/sobre" routerLinkActive="active-link" (click)="toggleMenu()">Sobre nós</a></li>
+    <li><button class="logout-btn-mobile" (click)="logout(); toggleMenu();">Sair</button></li>
+  </ul>
+</div>
