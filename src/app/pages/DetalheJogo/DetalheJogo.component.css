@@ -156,3 +156,56 @@
     padding: 120px 3rem 3rem;
     text-align: center;
 }
+
+@media (max-width: 992px) {
+  .detalhe-container {
+    /* Reduz o espaçamento geral para dar mais espaço ao conteúdo */
+    padding: 40px 1.5rem 1.5rem;
+  }
+
+  .content-wrapper {
+    /* Empilha o conteúdo principal e a sidebar verticalmente */
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .sidebar {
+    /* Remove o comportamento "sticky" que não faz sentido no layout de coluna única */
+    position: static;
+  }
+
+  .main-content h1 {
+    /* Diminui o título para se ajustar melhor à tela */
+    font-size: 2.5rem;
+  }
+
+  .descricao-detalhada h2 {
+    font-size: 1.6rem;
+  }
+
+  .descricao-detalhada p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+
+/* Para telas menores que 480px (celulares em modo retrato) */
+@media (max-width: 480px) {
+  .main-content h1 {
+    margin-top: 1rem;
+    font-size: 2.1rem; /* Título ainda menor para telas bem estreitas */
+  }
+
+  .price-action {
+    /* Empilha o preço e o botão de compra */
+    flex-direction: column;
+    align-items: flex-start; /* Alinha ambos à esquerda */
+    gap: 1rem;
+  }
+
+  .price-action button {
+    /* Faz o botão ocupar toda a largura da caixa */
+    width: 100%;
+    text-align: center;
+  }
+}

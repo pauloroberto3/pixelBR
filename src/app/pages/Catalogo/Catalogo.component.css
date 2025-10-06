@@ -68,3 +68,76 @@
     color: var(--color-preto);
     margin-bottom: 2rem;
 }
+
+/* ========================================= */
+/* ESTILOS PARA RESPONSIVIDADE (CATÁLOGO)    */
+/* ========================================= */
+
+/* ========================================= */
+/* ESTILOS PARA RESPONSIVIDADE (CATÁLOGO)    */
+/* ========================================= */
+
+/* ========================================= */
+/* ESTILOS PARA RESPONSIVIDADE (CATÁLOGO)    */
+/* ========================================= */
+
+@media (max-width: 992px) {
+  .catalogo-container {
+    flex-direction: column;
+    /* CORREÇÃO: Adiciona padding-top para não sobrepor o header */
+    padding: 120px 1.5rem 2rem; /* 120px para compensar o header, 1.5rem lateral e 3rem embaixo */
+    gap: 2.5rem; 
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    top: auto;
+    flex-basis: auto;
+  }
+
+  /* Garante que o título e a lista de filtros não se sobreponham */
+  .filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; 
+  }
+  
+  .filtro-grupo h3 {
+    margin-bottom: 0;
+  }
+
+  /* Barra horizontal de filtros */
+  .filtro-grupo ul {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 1rem; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .filtro-grupo ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filtro-btn {
+    width: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .game-display{
+    padding-top: 0;
+  }
+
+  .game-display h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Grid de jogos com 2 colunas no mobile */
+  app-game-card ::ng-deep .game-grid-poster {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
