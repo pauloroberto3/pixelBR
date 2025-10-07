@@ -10,5 +10,5 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./AuthHeader.component.css']
 })
 export class AuthHeaderComponent {
-  // Este componente é puramente visual, a lógica fica vazia.
+
 }

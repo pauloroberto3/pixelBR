@@ -106,8 +106,204 @@
         0 6px 0 var(--color-azul);
 }
 
+.cta-banner {
+  /* Primeiro o overlay semi-transparente para o 'borrão' */
+  background-image: linear-gradient(rgba(170, 171, 172, 0.7), rgba(52, 54, 56, 0.7)), 
+  linear-gradient(to right, 
+    var(--color-azul) 33.3%, 
+    var(--color-amarelo) 33.3%, 
+    var(--color-amarelo) 66.6%, 
+    var(--color-verde) 66.6%
+);
+  
+  background-size: cover; /* Garante que ambos os fundos cubram a área */
+  background-position: center;
+  background-attachment: fixed; 
+  
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 4rem 2rem; /* Espaçamento para separar das outras secções */
+  border-radius: 12px;
+  color: var(--color-branco);
+}
 
-/* --- SECÇÃO DE RESPONSIVIDADE (AJUSTADA) --- */
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: #c7d5e0; /* Um branco um pouco mais suave para o texto de apoio */
+  max-width: 600px;
+  margin: 0 auto 2rem; /* Centraliza o parágrafo e adiciona espaço abaixo */
+  line-height: 1.6;
+}
+
+.cta-button {
+  background-color: var(--color-preto);
+  color: var(--color-branco);
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+    box-shadow:
+    2px 2px 0 var(--color-verde),
+    4px 4px 0 var(--color-amarelo),
+    6px 6px 0 var(--color-azul);
+}
+
+.review-section {
+  padding: 4rem 2rem;
+  background-color: var(--color-preto); /* Um fundo cinzento claro para destacar a secção */
+}
+
+.review-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.review-image,
+.review-text {
+  flex: 1; /* Faz com que cada coluna ocupe metade do espaço */
+}
+
+.review-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.review-pre-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-azul);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.review-text h3 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-branco);
+  margin: 0.5rem 0;
+}
+
+.review-stars {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.review-text blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-verde);
+  border-left: 4px solid var(--color-verde);
+  padding-left: 1.5rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.review-text p {
+  color: var(--color-branco);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.review-button {
+  background-color: transparent;
+  color: var(--color-branco);
+  border: 2px solid var(--color-branco);
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.review-button:hover {
+  background-color: var(--color-branco);
+  color: var(--color-preto);
+}
+
+.creator-spotlight {
+  padding: 4rem 2rem;
+  background-color: var(--color-preto);
+  color: var(--color-branco);
+}
+
+.creator-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.creator-text,
+.creator-image {
+  flex: 1;
+}
+
+.creator-image img {
+  width: 100%;
+  border-radius: 12px;
+  filter: grayscale(50%); 
+  transition: filter 0.3s ease;
+}
+
+.creator-image img:hover {
+  filter: grayscale(0%);
+}
+
+.creator-pre-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-verde);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.creator-text h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.creator-text p {
+  color: #c7d5e0;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.creator-button {
+  background-color: transparent;
+  color: var(--color-branco);
+  border: 2px solid var(--color-branco);
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.creator-button:hover {
+  background-color: var(--color-branco);
+  color: var(--color-preto);
+}
+
 @media (max-width: 768px) {
     .hero-carousel, .swiper-container {
         height: 70vh;
@@ -117,7 +313,6 @@
         font-size: 2.5rem;
     }
 
-    /* O texto do parágrafo agora é ajustado, não escondido */
     .slide-content p {
         font-size: 1.1rem;
         line-height: 1.5;
@@ -131,7 +326,46 @@
     .genre-grid {
         padding: 0 1rem;
     }
+    
+    .cta-banner {
+    margin: 3rem 1rem;
+    padding: 3rem 1.5rem;
+    background-attachment: scroll;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  .cta-button {
+    padding: 0.8rem 1.5rem; 
+    font-size: 1rem;       
+  }
+  .review-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .review-text blockquote {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .review-text h3 {
+    font-size: 2.2rem;
+  }
+
+  .creator-container {
+    flex-direction: column-reverse; 
+    text-align: center;
+  }
+  
+  .creator-text h2 {
+    font-size: 2.2rem;
+  }
 }
+
 
 @media (max-width: 480px) {
     .slide-content h2 {
@@ -139,6 +373,6 @@
     }
     
     .slide-content p {
-        font-size: 1rem; /* Diminui ainda mais o parágrafo */
+        font-size: 1rem;
     }
 }

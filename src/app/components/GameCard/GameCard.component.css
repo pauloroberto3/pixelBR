@@ -1,6 +1,3 @@
-/* ================================================= */
-/* --- ESTILOS PARA OS CARDS DA HOME PAGE --- */
-/* ================================================= */
 .game-grid-home {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -87,9 +84,6 @@
         6px 6px 0 var(--color-azul);
 }
 
-/* ================================================= */
-/* --- ESTILOS PARA OS CARDS DO CATÁLOGO --- */
-/* ================================================= */
 .game-grid-poster {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

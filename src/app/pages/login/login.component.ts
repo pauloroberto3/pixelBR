@@ -12,15 +12,12 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  // Propriedades para guardar os dados do formulário
   email = '';
   senha = '';
   mensagemErro = '';
 
-  // Injeta o AuthService
   constructor(private authService: AuthService) {}
 
-  // Função chamada ao submeter o formulário
   fazerLogin() {
     const sucesso = this.authService.login(this.email, this.senha);
     if (!sucesso) {

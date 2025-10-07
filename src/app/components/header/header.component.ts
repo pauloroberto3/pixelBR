@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   itemCount = 0;
   private cartSubscription!: Subscription;
   
-  // 1. Nova variável para controlar o estado do menu
   isMenuAberto = false;
 
   constructor(
@@ -31,7 +30,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
-  // 2. Nova função para alternar o estado do menu
   toggleMenu(): void {
     this.isMenuAberto = !this.isMenuAberto;
   }

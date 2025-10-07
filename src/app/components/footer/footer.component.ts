@@ -7,11 +7,6 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./footer.component.css'],
   imports: [RouterModule]
 })
-export class FooterComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class FooterComponent {
 
 }

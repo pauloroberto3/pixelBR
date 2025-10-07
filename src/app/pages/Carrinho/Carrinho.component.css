@@ -78,10 +78,9 @@
 }
 
 .remover-btn:hover {
-    color: #ff5252; /* Vermelho para destaque */
+    color: #ff5252;
 }
 
-/* --- COLUNA DA DIREITA: RESUMO --- */
 .resumo-pedido {
     flex-basis: 350px;
     flex-shrink: 0;
@@ -136,7 +135,6 @@
     filter: brightness(1.1);
 }
 
-/* --- ESTILO PARA CARRINHO VAZIO --- */
 .carrinho-vazio {
     text-align: center;
     padding: 4rem 0;
@@ -171,21 +169,22 @@
     background-color: #4e4e4e;
 }
 
-/* Para telas menores que 992px (tablets e celulares) */
-/* ========================================= */
-/* ESTILO RESPONSIVO FINAL PARA O CARRINHO   */
-/* ========================================= */
-
-/* Para telas menores que 992px (tablets e celulares) */
 @media (max-width: 992px) {
+    h1{
+        text-align: center;
+    }
+
+    .lista-itens{
+        width: 100%
+    }
 
     .carrinho-container{
         margin-top: 2rem;
     }
 
-.carrinho-vazio{
-    padding-top: 1rem;
-}
+    .carrinho-vazio{
+        padding-top: 1rem;
+    }
   .carrinho-container {
     padding: 80px 1.5rem 1.5rem;
   }
@@ -199,16 +198,11 @@
     flex-direction: column;
   }
 
-  /* INVERSÃO DA ORDEM DAS SEÇÕES */
 
-
-  /* Card de resumo com design full-width */
   .resumo-pedido {
-    width: 90vw;
+    width: 100%;
     left: 50%;
-    margin-bottom: 2rem; /* Espaço entre o resumo e a lista de itens */
-
-    /* Estilos */
+    margin-bottom: 2rem;
     box-sizing: border-box;
     padding: 1.5rem; 
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -220,7 +214,6 @@
   }
 }
 
-/* Ajustes finos para telas muito pequenas, como celulares em pé */
 @media (max-width: 480px) {
   .carrinho-container h1 {
     font-size: 2.1rem;

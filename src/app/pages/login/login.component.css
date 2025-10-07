@@ -86,22 +86,18 @@ form {
     font-weight: 600;
 }
 
-/* --- SECÇÃO DE RESPONSIVIDADE (ADICIONADA) --- */
 @media (max-width: 480px) {
 
 
     .auth-container {
-        /* Garante que não há padding horizontal excessivo */
         padding: 0.5rem 1rem 3rem;
     }
 
     .auth-card {
-        /* Diminui o padding em telas muito pequenas */
         padding: 2rem 1.5rem;
     }
 
     .auth-card h1 {
-        /* Diminui o título principal */
         font-size: 1.8rem;
     }
 }

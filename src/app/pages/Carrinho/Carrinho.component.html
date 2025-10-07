@@ -6,7 +6,6 @@
       <div class="lista-itens">
         @for (item of itensDoCarrinho; track item.id) {
           <div class="item-card">
-            <!-- O link agora envolve a imagem e as informações -->
             <a [routerLink]="['/jogo', item.id]" class="item-link">
               <img [src]="item.capaPoster" [alt]="item.titulo" class="item-imagem">
               <div class="item-info">
@@ -14,7 +13,6 @@
                 <p>{{ item.preco | currency:'BRL' }}</p>
               </div>
             </a>
-            <!-- O botão de remover fica separado -->
             <button (click)="removerItemDoCarrinho(item.id)" class="remover-btn">Remover</button>
           </div>
         }

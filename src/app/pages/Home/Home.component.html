@@ -18,6 +18,54 @@
     <app-game-card [jogos]="jogosEmDestaque" [cardStyle]="'list'"></app-game-card>
   </section>
 
+<section class="review-section">
+  <div class="review-container">
+    <div class="review-image">
+      <img src="/assets/img/full/aritana_harpy.jpg" alt="Capa do Jogo em Análise">
+    </div>
+
+    <div class="review-text">
+      <span class="review-pre-title">A NOSSA ESCOLHA DO MÊS</span>
+      <h3>A Lenda de Aritana</h3>
+      <div class="review-stars">
+        <span>★★★★★</span>
+      </div>
+      <blockquote>
+        “Uma joia da narrativa e design. Um dos melhores jogos indie do ano, sem dúvida.”
+      </blockquote>
+      <p>
+        Mergulhe numa aventura épica inspirada na mitologia brasileira. Com visuais deslumbrantes e uma jogabilidade cativante, este jogo é uma experiência obrigatória.
+      </p>
+      <a [routerLink]="['/jogo', 19]" class="review-button">Ver na Loja</a>
+    </div>
+  </div>
+</section>
+
+  <section class="cta-banner">
+    <div class="cta-content">
+      <h2>Explore o Universo PixelBR</h2>
+      <p>Jogos criados por desenvolvedores brasileiros talentosos esperam por você.</p>
+      <a routerLink="/catalogo" class="cta-button">Ver Catálogo Completo</a>
+    </div>
+  </section>
+
+  <section class="creator-spotlight">
+  <div class="creator-container">
+    <div class="creator-text">
+      <span class="creator-pre-title">CRIADOR EM DESTAQUE</span>
+      <h2>Dumativa Creative Studio</h2>
+      <p>
+        Reconhecida por projetos de grande sucesso como o RPG do universo "Ordem Paranormal", a Dumativa é um estúdio de desenvolvimento que se destaca por criar experiências narrativas profundas e engajantes, unindo talento e paixão em cada jogo.
+      </p>
+      <a href="https://www.dumativa.com.br/" target="_blank" class="creator-button">Ver Jogos do Estúdio</a>
+    </div>
+    
+    <div class="creator-image">
+      <img src="/assets/img/dumativa-logo.png" alt="Logo do estúdio Dumativa">
+    </div>
+  </div>
+</section>
+
   <section class="genres-section">
     <h2 class="section-title">Navegue por Gêneros</h2>
     <div class="genre-grid">

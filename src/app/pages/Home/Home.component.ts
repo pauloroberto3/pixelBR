@@ -1,9 +1,9 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { GameCardComponent } from '../../components/GameCard/GameCard.component';
 import { Jogo } from '../../models/jogo.model';
 import { JOGOS } from '../../data/jogos';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
 
 import Swiper from 'swiper';
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
@@ -12,39 +12,42 @@ import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
   selector: 'app-home',
   standalone: true,
   imports: [
-    GameCardComponent,
+    CommonModule,
     RouterModule,
-    CommonModule
+    GameCardComponent
   ],
   templateUrl: './Home.component.html',
   styleUrls: ['./Home.component.css']
 })
-export class HomeComponent implements AfterViewInit {
-  jogosEmDestaque: Jogo[];
+export class HomeComponent implements OnInit, AfterViewInit {
+  jogosEmDestaque: Jogo[] = [];
   slidesDoCarrossel: any[];
 
   constructor() {
-    const idsDosJogosEmDestaque = [1, 5, 3, 6, 10];
-    this.jogosEmDestaque = JOGOS.filter(jogo => idsDosJogosEmDestaque.includes(jogo.id));
-
-    // Conteúdo do carrossel agora usa os novos caminhos de imagem
     this.slidesDoCarrossel = [
       {
         titulo: 'Celebre a Criatividade Nacional',
         texto: 'PixelBR é uma vitrine dedicada a celebrar e promover os incríveis jogos desenvolvidos no Brasil.',
-        imagemFundo: '/assets/img/carousel/slide-1.jpg' // <-- CAMINHO ATUALIZADO
+        imagemFundo: '/assets/img/carousel/slide-1.jpg'
       },
       {
         titulo: 'Explore um Catálogo Selecionado',
         texto: 'Navegue por uma curadoria especial de jogos, dos grandes sucessos aos tesouros indie.',
-        imagemFundo: '/assets/img/carousel/slide-1.jpg' // <-- CAMINHO ATUALIZADO
+        imagemFundo: '/assets/img/carousel/slide-1.jpg'
       },
       {
         titulo: 'Apoie os Desenvolvedores',
         texto: 'Cada jogo que você descobre aqui é uma oportunidade de apoiar o talento e a inovação da indústria brasileira.',
-        imagemFundo: '/assets/img/carousel/slide-1.jpg' // <-- CAMINHO ATUALIZADO
+        imagemFundo: '/assets/img/carousel/slide-1.jpg'
       }
     ];
+  }
+
+  ngOnInit(): void {
+    const todosOsJogos = [...JOGOS];
+    const jogosBaralhados = todosOsJogos.sort(() => 0.5 - Math.random());
+
+    this.jogosEmDestaque = jogosBaralhados.slice(0, 4);
   }
 
   ngAfterViewInit(): void {

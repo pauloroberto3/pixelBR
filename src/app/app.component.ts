@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule, Location } from '@angular/common'; // Importe o Location
+import { CommonModule, Location } from '@angular/common';
 import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { AuthHeaderComponent } from './components/AuthHeader/AuthHeader.component';
 import { HeaderComponent } from './components/header/header.component'; 
@@ -14,20 +14,17 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   isAuthPage = false;
-  // Variável para controlar o botão "Voltar" (RESTAURADA)
   mostrarBotaoVoltar = false;
 
-  constructor(private router: Router, private location: Location) { // Injete o Location
+  constructor(private router: Router, private location: Location) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        // Lógica para os cabeçalhos
         if (event.url === '/login' || event.url === '/cadastro') {
           this.isAuthPage = true;
         } else {
           this.isAuthPage = false;
         }
 
-        // Lógica para o botão "Voltar" (RESTAURADA)
         const rotasParaEsconderBotao = ['/login', '/cadastro', '/home', '/'];
         if (rotasParaEsconderBotao.includes(event.urlAfterRedirects)) {
           this.mostrarBotaoVoltar = false;
@@ -38,7 +35,6 @@ export class AppComponent {
     });
   }
 
-  // Função para voltar (RESTAURADA)
   voltarPaginaAnterior(): void {
     this.location.back();
   }

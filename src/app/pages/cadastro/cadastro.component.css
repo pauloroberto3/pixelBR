@@ -126,7 +126,6 @@ form {
         6px 6px 0 #888;
 }
 
-/* --- SECÇÃO DE RESPONSIVIDADE (ADICIONADA) --- */
 @media (max-width: 480px) {
     .auth-container {
         padding: 0.5rem 1rem 3rem;
@@ -139,8 +138,7 @@ form {
     .auth-card h1 {
         font-size: 1.8rem;
     }
-
-    /* Ajusta o alinhamento dos termos se o texto quebrar em várias linhas */
+    
     .form-group-terms {
         align-items: flex-start;
     }

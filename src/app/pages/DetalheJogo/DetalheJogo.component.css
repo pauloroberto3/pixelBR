@@ -27,21 +27,15 @@
 
 .banner-container {
     width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 2.5rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    height: auto;
 }
 
 .game-banner {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
-    object-fit: contain;
 }
 
 .descricao-detalhada h2 {
@@ -51,9 +45,9 @@
 }
 
 .descricao-detalhada p {
-    font-size: 1.5rem;
+    font-size: 1.1rem; /* Ajustado para melhor leitura */
     line-height: 1.8;
-    color: #a5a5a5;
+    color: #555; /* Cor ajustada para melhor contraste */
 }
 
 .sidebar {
@@ -71,14 +65,13 @@
 }
 
 .sidebar-sinopse {
-    font-size: 1.2rem;
-    color: #a5a5a5;
+    font-size: 1rem;
+    color: #6c757d;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
 .info-tags {
-    font-size: 1.3rem;
     margin-bottom: 2rem;
 }
 
@@ -86,14 +79,17 @@
     display: flex;
     justify-content: space-between;
     padding: 0.7rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
 }
+
 .info-item:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid #eee;
 }
 
 .info-item span:first-child {
-    color: #a0a0a0;
+    color: #6c757d;
+    font-weight: 500;
 }
 
 .info-item a {
@@ -120,7 +116,7 @@
 
 .price-action {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between; /* Ajustado para alinhar o preço à esquerda */
     align-items: center;
     gap: 1.5rem;
     color: var(--color-branco);
@@ -140,16 +136,19 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s ease, filter 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow:
+    2px 2px 0 var(--color-verde),
+    4px 4px 0 var(--color-amarelo),
+    6px 6px 0 var(--color-azul);
+}
+
+.price-action button:hover {
+    transform: translateY(-2px);
     box-shadow:
     4px 4px 0 var(--color-verde),
     6px 6px 0 var(--color-amarelo),
     8px 8px 0 var(--color-azul);
-}
-
-.price-action button:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
 }
 
 .jogo-nao-encontrado {
@@ -157,55 +156,58 @@
     text-align: center;
 }
 
+
 @media (max-width: 992px) {
-  .detalhe-container {
-    /* Reduz o espaçamento geral para dar mais espaço ao conteúdo */
-    padding: 40px 1.5rem 1.5rem;
-  }
+    .detalhe-container {
+        padding: 80px 1.5rem 1.5rem;
+    }
 
-  .content-wrapper {
-    /* Empilha o conteúdo principal e a sidebar verticalmente */
-    flex-direction: column;
-    gap: 2.5rem;
-  }
+    .content-wrapper {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
 
-  .sidebar {
-    /* Remove o comportamento "sticky" que não faz sentido no layout de coluna única */
-    position: static;
-  }
+    .sidebar {
+        position: static;
+        width: 100%;
+    }
 
-  .main-content h1 {
-    /* Diminui o título para se ajustar melhor à tela */
-    font-size: 2.5rem;
-  }
+    .main-content {
+        margin-top: 0;
+    }
 
-  .descricao-detalhada h2 {
-    font-size: 1.6rem;
-  }
+    .main-content h1 {
+        font-size: 2.5rem;
+    }
 
-  .descricao-detalhada p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
+    .descricao-detalhada h2 {
+        font-size: 1.6rem;
+    }
+
+    .descricao-detalhada p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
 }
 
-/* Para telas menores que 480px (celulares em modo retrato) */
 @media (max-width: 480px) {
-  .main-content h1 {
-    margin-top: 1rem;
-    font-size: 2.1rem; /* Título ainda menor para telas bem estreitas */
-  }
+    .main-content h1 {
+        margin-top: 1rem;
+        font-size: 2.1rem;
+    }
 
-  .price-action {
-    /* Empilha o preço e o botão de compra */
-    flex-direction: column;
-    align-items: flex-start; /* Alinha ambos à esquerda */
-    gap: 1rem;
-  }
+    .price-action {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
 
-  .price-action button {
-    /* Faz o botão ocupar toda a largura da caixa */
-    width: 100%;
-    text-align: center;
-  }
+    .price-action .preco {
+        text-align: center;
+    }
+
+    .price-action button {
+        width: 100%;
+        text-align: center;
+    }
 }

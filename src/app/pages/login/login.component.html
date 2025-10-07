@@ -3,20 +3,16 @@
     <h1>Entrar na sua Conta</h1>
     <p class="subtitle">Bem-vindo de volta! Use suas credenciais para continuar.</p>
     
-    <!-- Usamos (ngSubmit) para chamar a função de login -->
     <form (ngSubmit)="fazerLogin()">
       <div class="form-group">
         <label for="email">Email</label>
-        <!-- [(ngModel)] conecta o campo à propriedade 'email' -->
         <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="user@pixelbr.com" required>
       </div>
       <div class="form-group">
         <label for="senha">Senha</label>
-        <!-- [(ngModel)] conecta o campo à propriedade 'senha' -->
         <input type="password" id="senha" name="senha" [(ngModel)]="senha" placeholder="123456" required>
       </div>
 
-      <!-- Mostra a mensagem de erro se ela existir -->
       @if (mensagemErro) {
         <p class="error-message">{{ mensagemErro }}</p>
       }
